@@ -1,21 +1,137 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+<!doctype html>
+<html ng-app="website">
+<head>
+    <title>AngularJS Website</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+<!-- top -->
+<header id="header">
+    <h1 id="logo"><a href="#/home"></a></h1>
+
+</header>
+<div id="container">
+    <!-- Screen division left side -->
+   <div class="left">
+        <div class="centered">    
+               <!-- Left side Tab --> 
+            <ul class="move">
+                <li><a class="stepallign active" href="#step1">step 1</a>
+                    <a class="info active">Transaction info</a>
+                    <a class="CustomBar active"></a>
+                </li>
+                <li><a class="stepallign" href="#step2">step 2</a>
+                    <a class="info">Receipent info</a>
+                    <a class="CustomBar"></a>
+                </li>
+                <li><a class="stepallign" href="#step3">step 3</a>
+                    <a class="info">Make Payment</a>
+                    <a class="CustomBar"></a>
+                </li>                   
+            </ul>           
+        <div class="MainContainer">
+          <!-- Left side Tab contents -->
+            <div class="Title" style="font-weight:bold">Let's set up your transaction</div>
+            <div class="specify" style="font-size:12px">Specify the amount to be sent or recieved</div>
+            <div class="BoxContainer">
+                <div class="MainBox activateBox">
+                        <div class="Boxcontent bluebox">YOU SEND<div class="smallBox Currency"style="color:black">EUR</div></div>
+                        <div style="font-weight:bold">{{spending}}</div>
+                </div>
+                <div class="MainBox">
+                        <div class="Boxcontent">RECIEVER GETS<div class="smallBox Currency">GBR</div></div>
+                        <div style="font-weight:bold">{{Reciepent}}</div>
+                    </div>
+               </div>
+            </div>
+            <button id="myBtn" (click)="getDetails($event)">NEXT</button>
+             <!-- Left side Footer contents -->
+            <div class="Footer">
+                <div>
+                <span>@2016 CurrencyFair</span>
+                <span class="help blueFooter" href="">Help & Support</span>
+                <span class="legal blueFooter" href="">Legal Stuff</span>
+                </div>
+            </div>  
+        </div>
+          
+         </div>
+         
+   </div>  
+    <!-- Right side Tab -->
+    <div class="right">
+        <div class="rightColor">
+            <!-- Right side Tab Containers -->
+            <div class="w3-container TopPosition">
+                <div class="container w3-hide-small">
+                    <div class="box" style="font-weight:bold">Sending Details</div>
+                </div>
+                <div class="container w3-hide-small">
+                     <div class="box bottom boxwhite">You Send <span class="textcheck">{{spending}}</span></div>
+                 </div>
+                 <div class="container w3-hide-small">
+                      <div class="box" style="font-weight:bold">Receiving Details <span class="textcheck blue">As of right now</span><span class="question"></span></div> 
+                </div>  
+                <div class="container w3-hide-small boxcontainer boxwhite">
+                        <div class="box1">Rate<span class="textcheck">{{rate}}</span></div>
+        
+                        <div class="box1">Fee<span class="textcheck">{{Fee}}</span></div>
+                
+                        <div class="box1"> Delivery date<span class="textcheck">{{Delivery}}</span></div>
+                
+                        <div class="box1"> Reciepent gets<span class="textcheck">{{Reciepent}}</span></div>
+                </div>
+                <div class="container w3-hide-small">
+                        <div class="box boxwhite final">You save {{save}} compared your bank!</div> 
+                </div>     
+         </div>
+      </div>
+    </div>
+    <!-- PopUp Containers which is showed on screen after overlay -->
+    <div id="myModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                    <div class="Row1-content">
+                            <div class="lock-img"><i class="large material-icons">lock_outline</i>
+                                <div  class="Identity">Identity verification Required</div></div>
+                            <div class="Security">For your security, we ocassionally require you to verify your identity by
+                                    entering a code sent to your mobile device.</div>
+                     </div> 
+            <div class="border"></div>
+            <!-- PopUp screen OTP content-->  
+            <div class="Row2-content">
+                        <div class="code">Enter the code sent via SMS to<input type="text" placeholder="+353" class="Countrycode"><input type="text" placeholder="MobileNo."class="Mobile"></div>
+                    <div class="otp">
+                            <form>
+                                    <input id="codeBox1" type="number" maxlength="1" (keyup)="onKeyUpEvent(1, $event)" (focus)="onFocusEvent(1)"/>
+                                    <input id="codeBox2" type="number" maxlength="1" (keyup)="onKeyUpEvent(2, $event)" (focus)="onFocusEvent(2)"/>
+                                    <input id="codeBox3" type="number" maxlength="1" (keyup)="onKeyUpEvent(3, $event)" (focus)="onFocusEvent(3)"/>
+                                    <input id="codeBox4" type="number" maxlength="1" (keyup)="onKeyUpEvent(4, $event)" (focus)="onFocusEvent(4)"/>
+                                    <input id="codeBox5" type="number" maxlength="1" (keyup)="onKeyUpEvent(5, $event)" (focus)="onFocusEvent(4)"/>
+                                    <input id="codeBox6" type="number" maxlength="1" (keyup)="onKeyUpEvent(6, $event)" (focus)="onFocusEvent(4)"/>
+                            </form>
+                    </div>
+                    <div class="revisit">
+                        <div class="RevisitCode"> Receive a new code</div>
+                        <div class="RevisitCall">Receive code via call instead</div>
+                    </div>
+             </div>  
+             <div class="border"></div> 
+             <!-- PopUp screen footer at the bottom-->  
+             <div class="Row3-content">
+                  <div class="FinalBtn">
+                    <button id="verify" ng-click="getverify()">Verify Identity</button>
+                    <button id="back" ng-click="getback()">Back</button>     
+                    <div class="deviceAccess">I can’t access this mobile device</div>
+                   </div>
+                  
+             </div> 
+           
+             </div>
+          
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+</body>
+</html>
 
 <router-outlet></router-outlet>

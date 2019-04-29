@@ -1,0 +1,456 @@
+@font-face {
+  font-family: PostGrotesk;
+  src: url("fonts/PostGrotesk-Bold.ttf");
+ }
+
+/*This is the CSS Property of main page*/
+#header {
+    height: 64px;
+    background: rgba(31, 43, 61, 0.90);
+    position: fixed;
+    header: 0;
+    left: 0;
+    width: 100%;
+}
+
+#header h1#logo {
+    float: left;
+    margin: 0;
+}
+
+#header h1#logo a {
+    background: url(images/CF.svg) no-repeat top;
+    transform: scale(1.5, 1.5);
+    width: 500px;
+    height: 48px;
+    margin: 8px;
+    display: block;
+    text-indent: -9999px;
+}
+
+
+#header .color {
+    display: block;
+    height: 4px;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+}
+
+#header #menu {float:left;padding:17px 40px 0 0;}
+
+.experiment {
+    cursor: pointer;
+    outline: 1px lightgray solid;
+    padding: 5px;
+    margin: 5px;
+}
+body {
+    font-family: PostGrotesk;
+    color: black;
+    margin:0px;
+  }
+  
+  .split {
+    height: 100%;
+    width: 60%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+  }
+  /*Properties of screen division*/
+  .left {
+    height: 100%;
+    width: 60%;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    border-right: 2px solid;
+    border-right-color: grey;
+    font-size: 19px;
+  }
+  
+  .right {
+    right: 0;
+    height: 100%;
+    width: 40%;
+    position: fixed;
+    z-index: 1;
+  }
+
+  .rightColor{
+    margin-top:64px;
+    height: 100%;
+    background-color: rgb(245, 245, 245);
+  }
+  /*Left side property details*/ 
+  /* Style the tab */
+ .tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+  /* Change background color of buttons on hover */
+  .tab button:hover {
+    background-color: #ddd;
+  }
+  
+  /* Create an active/current tablink class */
+  .tab button.active {
+    background-color: #ccc;
+  }
+  
+  /* Style the tab content */
+  .tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+  }
+
+  
+  .active {
+    color: rgb(41, 100, 179)!important;
+  }
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+  .centered {
+    position: absolute;
+    top: 18%;
+    left: 20%;
+    width: 80%;
+  }
+  .stepallign{
+    float:left;
+    padding-right:20%; 
+    padding-bottom:0px;
+  }
+
+  .move{
+    float:left;
+  }
+  .info{
+    float:left;
+    padding-bottom: 8px;
+    padding-right:20% !important;
+  }
+  .CustomBar{
+    float: left;
+    width: 100%;
+    border-bottom:solid 4px;
+  }
+  .centered img {
+    width: 150px;
+    border-radius: 50%;
+  }
+  .box{
+    border: 1px solid grey ;
+    width: 80%;
+    height: 60px;
+    padding:20px 0 0 10px;
+    box-sizing: border-box;
+  }
+  .boxcontainer{
+    border: 1px solid grey ;
+    width: 80%;
+    padding-bottom: 20px;
+    box-sizing: border-box;
+  }
+ .box1{
+    padding: 20px 0 0 10px;
+  }
+ .boxwhite{
+    background-color: white;
+  }
+  .final{
+    text-align: center;
+    color: rgba(138, 138, 0, 0.767);
+  }
+  .MainBox{
+    border: 1px solid grey ;
+    border-radius: 5px;
+    width: 80%;
+    height: 100px;
+    padding:20px 0 70px 10px;
+    box-sizing: border-box;
+  }
+  .smallBox{
+    border: 1px solid grey ;
+    border-radius: 50px 5px 5px 50px;
+    width: 90px;
+    height: 52px;
+    float:right;
+    margin-right: 20px;
+  }
+
+   .Currency{
+    padding-top: 10px;
+    padding-left: 40px;
+
+  }
+   .activateBox{
+    border: 2px solid rgb(41, 100, 179);
+    background-color:rgb(245, 245, 245);
+  }
+
+   .TopPosition{
+   padding-top: 10%;
+   width: 90%;
+   padding-left: 10%;
+  }
+
+
+.textcheck{
+   float: right;
+   margin-right:5%;
+}
+.NoBox{
+    left: 35%;
+    width: 500px;
+    height: 70px;
+    padding:20px 0 0 10px;
+}
+
+/*Property of Contents inside the tab*/
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 99%;
+    overflow: hidden;
+    background-color: white;
+ }
+
+  
+  li {
+    float: left;
+  }
+
+  .margin{
+    margin-right:13% !important;
+  }
+  
+  li:last-child {
+    border-right: none;
+  }
+  
+  li a {
+    display: block;
+    color: rgb(156, 174, 199);
+    text-align: center;
+    text-decoration: none;
+  }
+
+  
+  .MainContainer {
+    margin-top: 15%;
+  }
+  .BoxContainer{
+    margin-top: 5%;
+  }
+
+
+/*2nd screen page*/
+ /*Blur Effect*/
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
+  }
+  
+  /* Modal Content Property for popup screen */
+  .modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  #myBtn{
+    background-color: rgb(120, 193, 226);
+    border: none;
+    border-radius: 5px; 
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top:5%;
+  }
+
+  .Footer{
+    width:80%;
+    margin-top:3%;
+    font-size: 10px;
+    border-top: 1px solid;
+    color:rgb(194, 194, 194);
+  }
+  .help{
+    margin-left:62%;
+    cursor: pointer;
+  }
+  .legal{
+    float:right; 
+    cursor: pointer;
+  }
+
+  /*Final screen*/
+
+  .modal-content {
+    position: absolute;
+    top:40%;
+    left: 50%;
+    width: 40%;
+    transform: translate(-50%, -50%);
+  }
+.Identity{
+  padding-top: 2px;
+  padding-left: 10px;
+  font-weight: bold;
+}
+.Security{
+  padding-top: 2px;
+}
+.lock-img{
+  display: -webkit-inline-box;
+}
+.border{
+  border-bottom: 1px solid #888;
+}
+.code{
+    padding-top: 40px;
+    padding-left: 10px;
+    padding-bottom: 20px;
+    font-weight: bold;
+}
+.otp{
+   padding-left: 0px;
+}
+input[type=number] {
+   height: 45px;
+   width: 45px;
+   font-size: 25px;
+   text-align: center;
+   border-radius: 5px;
+   margin-left: 11px;
+   border: 1px solid #000000;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+
+.Countrycode{
+   margin-left: 10px;
+   width: 40px;
+   background-color: #dfdbdb
+}
+
+.Mobile{
+   width: 90px;
+   background-color:  #eeeeee
+}
+.revisit{
+   display: -webkit-inline-box;
+   padding-left: 10px;
+   padding-bottom: 40px;
+   font-size: 11px;
+}
+.RevisitCode{
+   padding-right: 35%;
+}
+.FinalBtn{
+   display: flex;
+   padding-top: 7%;
+}
+#verify{
+   background-color: rgb(120, 193, 226);
+   border: none;
+   border-radius: 5px; 
+   color: white;
+   padding: 7px;
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+   font-size: 16px;
+   cursor: pointer;
+   width:30%;
+   margin-right: 6%;
+}
+#back{
+  border: 1px solid #888;
+  background-color: #f3f3f3;
+  border-radius: 5px; 
+  color: grey;
+  padding: 7px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;cursor: pointer;
+}
+.deviceAccess{
+  padding-left: 20%;
+  padding-top: 7px;
+  font-size: 12px;
+  margin-right: 0%;
+  color:rgb(120, 193, 226);
+}
+.Row2-content{
+  margin-left: 16%;
+  margin-right: 16%;
+}
+
+.lock-img{
+  font-size: 20px;
+}
+
+.blue{
+  color: rgb(120, 193, 226);
+  font-weight: 50;
+  font-size: 12px;
+}
+.bluebox{
+  color: rgb(120, 193, 226);
+  font-weight: 50;
+}
+.blueFooter{
+  color: rgb(120, 193, 226);
+  font-weight: 50;
+}
+.question{
+background: url(images/questionMark.png);
+
+}
